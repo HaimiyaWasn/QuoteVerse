@@ -56,7 +56,7 @@ export default function HeroSection() {
         </button>
       </header>
       
-      <div className="mx-auto flex flex-col md:flex-row max-w-7xl items-center justify-between gap-16 px-8 py-16">
+      <div className="mx-auto flex flex-col md:flex-row max-w-7xl items-center justify-between gap-16 px-8 md:pt-28 py-14">
         <div className="max-w-2xl">
           <span className="rounded-full text-sm font-medium text-[#9A6330] bg-[#F8E7D1] px-4 py-2">
             ☀ Daily Inspiration
