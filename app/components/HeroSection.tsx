@@ -1,5 +1,6 @@
 "use client"
 
+import Link from "next/link";
 import { useEffect, useState } from "react";
 import { AnimatePresence, motion } from "motion/react";
 
@@ -50,10 +51,12 @@ export default function HeroSection() {
         <h1 className="text-2xl font-bold tracking-tight text-[#8A5523]">
           QuoteVerse
         </h1>
-
-        <button className="rounded-full bg-[#C97B36] px-5 py-2.5 font-medium text-white transition hover:bg-[#B2682A]">
-          Get Started
-        </button>
+        
+        <Link href="/randomQuote">
+          <button className="rounded-full bg-[#C97B36] px-5 py-2.5 font-medium text-white transition hover:bg-[#B2682A] cursor-pointer">
+            Get Started
+          </button>
+        </Link>
       </header>
       
       <div className="mx-auto flex flex-col md:flex-row max-w-7xl items-center justify-between gap-16 px-8 md:pt-28 py-14">
