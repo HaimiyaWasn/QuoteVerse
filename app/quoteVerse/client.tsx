@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 type Quote = {
   id: number,
@@ -32,8 +32,30 @@ export default function ClientQuoteVerse({ initialQuote }: Props) {
       setQuote(data);
     } finally {
       setLoading(false);
-    }
-  }
+    };
+  };
+
+  async function copyQuote() {
+    if (copied) return;
+
+    await navigator.clipboard.writeText(`"${quote.quote}"\n— ${quote.author}`);
+
+    setCopied(true);
+
+    setTimeout(() => {
+      setCopied(false);
+    }, 1000);
+  };
+
+  useEffect(() => {
+    setIsMounted(true);
+
+    const timer = setTimeout(() => {
+      setIsIntro(false);
+    }, 2000);
+
+    return () => clearTimeout(timer);
+  }, []);
 
   return (
     <section>
