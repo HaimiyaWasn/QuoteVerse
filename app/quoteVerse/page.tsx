@@ -1,11 +1,15 @@
 import { getRandomQuote } from "@/lib/quote"
 
+import ClientQuoteVerse from "./client"
 
+type Quote = {
+  id: number,
+  quote: string,
+  author: string,
+}
 
-export default function QuoteVerse() {
-  return (
-    <section>
-      
-    </section>
-  )
+export default async function QuoteVerse() {
+  const quote = await getRandomQuote();
+
+  return <ClientQuoteVerse initialQuote={quote} />
 }
