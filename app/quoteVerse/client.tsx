@@ -19,6 +19,22 @@ export default function ClientQuoteVerse({ initialQuote }: Props) {
   const [isMounted, setIsMounted] = useState(false);
   const [isIntro, setIsIntro] = useState(true);
 
+  async function fetchNewQuote() {
+    try {
+      setLoading(true);
+
+      const res = await fetch(`/api/quoteVerses`, {
+        cache: "no-store",
+      });
+
+      const data = await res.json();
+
+      setQuote(data);
+    } finally {
+      setLoading(false);
+    }
+  }
+
   return (
     <section>
 

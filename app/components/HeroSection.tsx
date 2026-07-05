@@ -22,7 +22,7 @@ export default function HeroSection() {
         await new Promise((resolve) => setTimeout(resolve, 500));
       }
       
-      const res = await fetch("/api/quotes", {
+      const res = await fetch("/api/quoteVerses", {
         cache: "no-store",
       });
 
