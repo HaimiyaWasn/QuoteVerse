@@ -66,7 +66,7 @@ export default function HeroSection() {
           QuoteVerse
         </h1>
         
-        <Link href="/randomQuote">
+        <Link href="/quoteVerse">
           <button className="rounded-full bg-[#C97B36] px-5 py-2.5 font-medium text-white transition hover:bg-[#B2682A] cursor-pointer">
             Get Started
           </button>
