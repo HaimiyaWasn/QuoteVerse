@@ -10,7 +10,7 @@ type Quote = {
   author: string;
 }
 
-export default function HeroSection() {
+export default function LandingPage() {
   const [quote, setQuote] = useState<Quote | null>(null);
   const [isVisible, setIsVisible] = useState(true);
 
