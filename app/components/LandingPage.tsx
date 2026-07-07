@@ -1,4 +1,4 @@
-"use client"
+"use client";
 
 import Link from "next/link";
 import { useEffect, useState } from "react";
@@ -8,7 +8,7 @@ type Quote = {
   id: number;
   quote: string;
   author: string;
-}
+};
 
 export default function LandingPage() {
   const [quote, setQuote] = useState<Quote | null>(null);
@@ -21,7 +21,7 @@ export default function LandingPage() {
 
         await new Promise((resolve) => setTimeout(resolve, 500));
       }
-      
+
       const res = await fetch("/api/quoteVerses", {
         cache: "no-store",
       });
@@ -47,7 +47,7 @@ export default function LandingPage() {
 
   return (
     <section className="min-h-screen bg-[#FFF8F0] text-[#2D241D]">
-      <motion.header 
+      <motion.header
         initial={{
           opacity: 0,
           y: -25,
@@ -65,17 +65,17 @@ export default function LandingPage() {
         <h1 className="text-2xl font-bold tracking-tight text-[#8A5523]">
           QuoteVerse
         </h1>
-        
+
         <Link href="/quoteVerse">
           <button className="rounded-full bg-[#C97B36] px-5 py-2.5 font-medium text-white transition hover:bg-[#B2682A] cursor-pointer">
             Get Started
           </button>
         </Link>
       </motion.header>
-      
+
       <div className="mx-auto flex flex-col md:flex-row max-w-7xl items-center justify-between gap-16 px-8 md:pt-28 py-14">
         <div className="max-w-2xl">
-          <motion.span 
+          <motion.span
             initial={{
               opacity: 0,
             }}
@@ -90,7 +90,7 @@ export default function LandingPage() {
           >
             ☀ Daily Inspiration
           </motion.span>
-          
+
           <motion.div
             initial={{
               opacity: 0,
@@ -106,32 +106,20 @@ export default function LandingPage() {
             }}
           >
             <h2 className="mt-8 text-5xl md:text-7xl font-bold leading-tight">
-              Find words that inspire you. 
+              Find words that inspire you.
             </h2>
 
             <p className="mt-6 max-w-xl text-lg leading-8 text-zinc-400">
-              Explore a collection of quotes from famous authors, philosophers, and thought leaders. 
-              Get inspired and motivated every day with our hand-picked selection of quotes that will uplift your spirits and help you achieve your goals.
+              Explore a collection of quotes from famous authors, philosophers,
+              and thought leaders. Get inspired and motivated every day with our
+              hand-picked selection of quotes that will uplift your spirits and
+              help you achieve your goals.
             </p>
           </motion.div>
         </div>
 
         <div className="relative w-full max-w-md overflow-hidden rounded-3xl">
-          <motion.div 
-            initial={{
-              opacity: 0,
-              x: 25,
-            }}
-            animate={{
-              opacity: 1,
-              x: 0,
-            }}
-            transition={{
-              duration: 1,
-              delay: 1,
-            }}
-            className="rounded-3xl border border-black/10 bg-black/5 p-8 backdrop-blur-xl"
-          >
+          <div className="rounded-3xl border border-black/10 bg-black/5 p-8 backdrop-blur-xl">
             <span className="text-[#B68458]">Today's Quote</span>
 
             <div className="mt-6 min-h-50 flex items-center">
@@ -180,7 +168,7 @@ export default function LandingPage() {
                 )}
               </AnimatePresence>
             </div>
-          </motion.div>
+          </div>
         </div>
       </div>
     </section>
