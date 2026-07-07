@@ -143,7 +143,7 @@ export default function ClientQuoteVerse({ initialQuote }: Props) {
             <button
               onClick={fetchNewQuote}
               disabled={loading}
-              className="flex flex-1 items-center justify-center gap-2 rounded-xl bg-white py-3 font-medium text-black transition hover:scale-103"
+              className="flex flex-1 items-center justify-center gap-2 rounded-xl bg-white py-3 font-medium text-black transition duration-300 hover:scale-102"
             >
               <HiOutlineArrowPath 
                 className={loading ? "animate-spin" : ""}
