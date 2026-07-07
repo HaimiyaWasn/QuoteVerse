@@ -19,7 +19,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Randomize Quote by Haimiya Wasn",
     description: "Create Random Quote from API",
-    url: "https://quote-verse-blond.vercel.app/",
+    url: "https://quote-verse-randomize.vercel.app/",
     images: [
       {
         url: "/og-image.jpg",
